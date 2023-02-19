@@ -4,7 +4,8 @@ export default function UploadFiles() {
 
         const fd = new FormData()
         fd.append("nehorai", e.target[0].files[0])
-        fd.append("maimon", e.target[1].value)
+        fd.append("nehorai", e.target[1].files[0])
+        fd.append("maimon", e.target[2].value)
 
         fetch('http://localhost:4000/files/many', {
             method: 'POST',
@@ -22,6 +23,7 @@ export default function UploadFiles() {
                     send(e)
                 }}
             >
+                <input type="file" name='nehorai' /><br />
                 <input type="file" name='nehorai' /><br />
                 <input type="text" name='text' /><br />
                 <button >submit</button>
